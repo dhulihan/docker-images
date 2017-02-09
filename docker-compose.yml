@@ -4,9 +4,11 @@ services:
     image: "web-color"
     build:
       context: web-color
-    volumes:
-      - ./web-color/html:/usr/share/nginx/html
+    #volumes:
+    #  - ./web-color/html:/usr/share/nginx/html
+    #entrypoint: 'cat index.html'
     ports:
       - "8080:80"
     environment:
       - NGINX_PORT=80
+      - COLOR=limegreen
