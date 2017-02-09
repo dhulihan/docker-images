@@ -1,6 +1,12 @@
 version: '2'
 services:
-  logger:
-    image: 'dhulihan/logger'
+  web:
+    image: "web-color"
     build:
-      context: 'dhulihan/logger'
+      context: web-color
+    volumes:
+      - ./web-color/html:/usr/share/nginx/html
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_PORT=80
